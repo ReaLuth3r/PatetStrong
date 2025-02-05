@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Landing Page | Patet – Professional Trainer</title>
+  <style>
+    /* ------------------------------------------ */
+    /* CREDIT TO PATET                           */
+    /* ------------------------------------------ */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Set the page background color */
+    body {
+      background-color: #1a1a1a;
+      color: #fff;
+      font-family: sans-serif;
+      font-size: 16px;
+    }
+
+    /* Style the navigation bar */
+    header {
+      background-color: #222;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      z-index: 999; /* Ensure nav is above hero */
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 100%;
+      margin: 0 auto;
+      max-width: 1200px;
+      padding: 0 20px;
+    }
+
+    /* Logo / Brand Name */
+    .logo {
+      font-size: 20px;
+      font-weight: bold;
+      color: #ff5500;
+      text-decoration: none;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav li {
+      margin-left: 20px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      color: #ff5500;
+    }
+
+    /* Optional: position for the search bar */
+    .search-container {
+      margin-left: 20px;
+    }
+
+    /* Style the hero section */
+    .hero {
+      background-image: url("https://via.placeholder.com/1400x800.jpg?text=Hero+Background");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 500px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin-top: 50px; /* Space under fixed header */
+    }
+
+    .hero h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 24px;
+      max-width: 800px;
+      margin: 0 auto 40px auto;
+      line-height: 1.4;
+    }
+
+    /* Example CTA button in hero */
+    .cta-buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    /* Style the features section */
+    .features {
+      background-color: #333;
+      padding: 50px 20px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .features h2 {
+      font-size: 36px;
+      margin-bottom: 30px;
+    }
+
+    .features ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      list-style: none;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .features li {
+      flex-basis: 30%;
+      margin: 10px;
+      min-width: 250px;
+    }
+
+    .features img {
+      width: 150px;
+      margin-bottom: 20px;
+    }
+
+    .features h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      color: #ff5500;
+    }
+
+    .features p {
+      font-size: 18px;
+      line-height: 1.4;
+    }
+
+    /* Footer styles */
+    footer {
+      background-color: #222;
+      color: #fff;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 16px;
+    }
+
+    /* Button styling (credit to patet) */
+    .cssbuttons-io-button {
+      background: #ff5500;
+      color: white;
+      font-family: inherit;
+      padding: 0.35em;
+      padding-left: 1.2em;
+      font-size: 17px;
+      font-weight: 500;
+      border-radius: 0.9em;
+      border: none;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      box-shadow: inset 0 0 1.6em -0.6em #ff5500;
+      overflow: hidden;
+      position: relative;
+      height: 2.8em;
+      padding-right: 3.3em;
+      cursor: pointer;
+    }
+
+    .cssbuttons-io-button .icon {
+      background: white;
+      margin-left: 1em;
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 2.2em;
+      width: 2.2em;
+      border-radius: 0.7em;
+      box-shadow: 0.1em 0.1em 0.6em 0.2em #ff5500;
+      right: 0.3em;
+      transition: all 0.3s;
+    }
+
+    .cssbuttons-io-button:hover .icon {
+      width: calc(100% - 0.6em);
+    }
+
+    .cssbuttons-io-button .icon svg {
+      width: 1.1em;
+      transition: transform 0.3s;
+      color: #ff5500;
+    }
+
+    .cssbuttons-io-button:hover .icon svg {
+      transform: translateX(0.1em);
+    }
+
+    .cssbuttons-io-button:active .icon {
+      transform: scale(0.95);
+    }
+
+    /* Search label styling */
+    .search-label {
+      display: flex;
+      align-items: center;
+      box-sizing: border-box;
+      position: relative;
+      border: 1px solid transparent;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #3d3d3d;
+      padding: 9px;
+      cursor: text;
+      color: #ff5500;
+    }
+
+    .search-label:hover {
+      border-color: gray;
+    }
+
+    .search-label:focus-within {
+      background: #464646;
+      border-color: gray;
+    }
+
+    .search-label input {
+      outline: none;
+      width: 100%;
+      border: none;
+      background: none;
+      color: rgb(162, 162, 162);
+    }
+
+    .search-label input:focus + .slash-icon,
+    .search-label input:valid + .slash-icon {
+      display: none;
+    }
+
+    .search-label input:valid ~ .search-icon {
+      display: block;
+    }
+
+    .search-label input:valid {
+      width: calc(100% - 22px);
+      transform: translateX(20px);
+    }
+
+    .search-label svg,
+    .slash-icon {
+      position: absolute;
+      color: #ff5500;
+    }
+
+    .search-icon {
+      display: none;
+      width: 12px;
+      height: auto;
+    }
+
+    .slash-icon {
+      right: 7px;
+      border: 1px solid #ff5500;
+      background: linear-gradient(-225deg, #343434, #6d6d6d);
+      border-radius: 3px;
+      text-align: center;
+      box-shadow: inset 0 -2px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93),
+        0 1px 2px 1px rgba(28, 28, 29, 0.4);
+      cursor: pointer;
+      font-size: 12px;
+      width: 15px;
+    }
+
+    .slash-icon:active {
+      box-shadow: inset 0 1px 0 0 #3f3f3f, inset 0 0 1px 1px rgb(94, 93, 93),
+        0 1px 2px 0 rgba(28, 28, 29, 0.4);
+      text-shadow: 0 1px 0 #7e7e7e;
+      color: transparent;
+    }
+
+    .PatetStrong {
+      color: #ff5500;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header>
+    <nav>
+      <a href="#" class="logo">Patet</a>
+      <ul>
+        <li><a href="#">Building a training program</a></li>
+        <li><a href="#">Calculating calories</a></li>
+        <li><a href="#">Games to enrich knowledge</a></li>
+      </ul>
+
+      <!-- Optional search form -->
+      <div class="search-container">
+        <label class="search-label">
+          <input type="text" placeholder="Search..." />
+          <span class="slash-icon">/</span>
+          <svg class="search-icon" fill="currentColor" viewBox="0 0 24 24">
+            <path
+              d="M23.384 21.619l-5.543-5.543a9.211 9.211 0 001.91-5.573c0-5.092-4.141-9.233-9.233-9.233S1.285 5.411 1.285 10.503s4.141 9.233 9.233 9.233c2.13 0 4.085-.732 5.573-1.91l5.543 5.543a1 1 0 001.414-1.414zM3.285 10.503c0-3.982 3.237-7.233 7.233-7.233s7.233 3.237 7.233 7.233c0 3.995-3.237 7.233-7.233 7.233s-7.233-3.238-7.233-7.233z">
+            </path>
+          </svg>
+        </label>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>Welcome to <span class="PatetStrong">Patet</span>'s Training Universe</h1>
+    <p>
+      Hi, I'm <span class="PatetStrong">Patet</span>, a professional trainer with a passion for helping you achieve your fitness goals. Explore personalized training programs, track your calorie intake, and enrich your knowledge through fun games.
+    </p>
+    <div class="cta-buttons">
+      <button class="cssbuttons-io-button">
+        Get Started
+        <div class="icon">
+          <svg height="24" width="24" viewBox="0 0 24 24">
+            <path d="M13 12l-8 5v-10zM15 7v10l8-5z"/>
+          </svg>
+        </div>
+      </button>
+      <button class="cssbuttons-io-button">
+        Learn More
+        <div class="icon">
+          <svg height="24" width="24" viewBox="0 0 24 24">
+            <path d="M13 12l-8 5v-10zM15 7v10l8-5z"/>
+          </svg>
+        </div>
+      </button>
+    </div>
+  </section>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h2>What You Can Do Here</h2>
+    <ul>
+      <li>
+        <img src="https://via.placeholder.com/150/ff5500/FFFFFF?text=Icon+1" alt="Feature Icon 1">
+        <h3>Build a Training Program</h3>
+        <p>
+          Create custom workouts designed around your schedule, goals, and equipment.
+        </p>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/150/ff5500/FFFFFF?text=Icon+2" alt="Feature Icon 2">
+        <h3>Calculate Calories</h3>
+        <p>
+          Easily track your daily caloric intake with our user-friendly calculator.
+        </p>
+      </li>
+      <li>
+        <img src="https://via.placeholder.com/150/ff5500/FFFFFF?text=Icon+3" alt="Feature Icon 3">
+        <h3>Enrich Knowledge Through Games</h3>
+        <p>
+          Make learning about health and fitness fun with engaging mini-games!
+        </p>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 <span class="PatetStrong">Patet</span> – Professional Trainer</p>
+  </footer>
+
+</body>
+</html>
